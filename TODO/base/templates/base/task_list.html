@@ -9,16 +9,19 @@
     <title>TODO</title>
 </head>
 <body>
-    {% for task in object_list %}
+    
     <div class="jumbotron" style="padding: 40px;">
-    <div class="card" style="width: 18rem;">
+    {% for task in object_list %}
+    <div class="jumbotron" style="padding: 10px;">
+    <div class="card" style="width: 18rem; padding: 10px;">
         <div class="card-body">
           <h5 class="card-title">{{task.title}}</h5>
           <p class="card-text"></p>
           <a href="#" class="btn btn-primary">{{task.status}}</a>
         </div>
+        </div>
       </div>
-      {% endfor %}
+    {% endfor %}
     </div>
 </body>
 </html>
