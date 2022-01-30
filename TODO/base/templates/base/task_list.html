@@ -11,6 +11,12 @@
 <body>
     
     <div class="jumbotron" style="padding: 40px;">
+    {% if request.user.is_authenticated %}
+      <h3> Welcome {{request.user}}</h3>
+      <a href="{% url 'logout' %}" class="btn btn-secondary btn-lg"  role="button" aria-disabled="true">Logout</a>
+    {% else %}
+      <a href="{% url 'login' %}" class="btn btn-secondary btn-lg"  role="button" aria-disabled="true">Login</a>
+    {% endif %}
     {% for task in object_list %}
     <div class="jumbotron" style="padding: 10px;">
     <div class="card" style="width: 18rem; padding: 10px;">
