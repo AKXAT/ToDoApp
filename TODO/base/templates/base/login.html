@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="jumbotron">
-        <form method="POST">
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="container-fluid" style="background-image: linear-gradient(to bottom right, rgb(179, 255, 204), yellow); padding: 40px; border-radius: 20px; ">
+        <form method="POST" class="container-fluid" style="align-content: center;">
             {% csrf_token %}
-            {{ form.as_p }}
-              
+            {{ form.as_p }} 
             <button type="submit" class="btn btn-primary">Login</button>
           </form>
     </div>
-</body>
-</html>
+{% endblock content %}
