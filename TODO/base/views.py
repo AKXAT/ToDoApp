@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from .models import Task
 from django.views.generic.list import ListView
 from django.contrib.auth.views import LoginView 
+from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Creating Class based views
@@ -23,3 +24,13 @@ class TaskList(LoginRequiredMixin , ListView): #Login required mixin is a restri
         context =  super().get_context_data(**kwargs)
         context['tasks'] = context['tasks'].filter(user=self.request.user) #updating the context object to just view the respective user data
         return context
+
+class TaskCreate(LoginRequiredMixin,CreateView):
+    model = Task
+    fields = ['title','status']
+    success_url =  reverse_lazy('tasklist')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+

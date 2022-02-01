@@ -6,6 +6,7 @@
       {% if request.user.is_authenticated %}
       <h3 style="color: rgb(0, 0, 0);"> Welcome {{request.user}}</h3>
       <a href="{% url 'logout' %}" class="btn btn-danger btn-lg"  role="button">Logout</a>
+      <a href="{% url 'taskcreate' %}" class="btn btn-success btn-lg"  role="button">Add New Task</a>
       {% else %}
       <a href="{% url 'login' %}" class="btn btn-success btn-lg"  role="button" >Login</a>
       {% endif %}
