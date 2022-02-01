@@ -1,5 +1,8 @@
 # Build Todo Application
 
+![1](https://github.com/AKXAT/ToDoApp/blob/main/Screenshots/1.png)
+![2](https://github.com/AKXAT/ToDoApp/blob/main/Screenshots/2.png)
+
 ## Phase 1 (currently they are admin based): 
 
 1. Todo Application in Django Admin
